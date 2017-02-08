@@ -1,0 +1,10 @@
+name: ucsc_pslpostarget
+owner: yating-l
+description: flip psl strands so target is positive and implicit
+homepage_url: http://hgdownload.cse.ucsc.edu/admin/exe/
+type: unrestricted
+categories: 
+- Sequence Analysis
+exclude:
+  - tool_test_output.html
+  - tool_test_output.json

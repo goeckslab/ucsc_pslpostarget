@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<tool id="ucsc_pslpostarget" name="UCSC pslPosTarget" version="1.0">
+    <description>flip psl strands so target is positive and implicit</description>
+    <requirements>
+      <requirement type="package" version="1.0">ucsc_tools_340_for_BLAT</requirement>
+    </requirements>
+    <stdio>
+        <exit_code range="1:" level="warning" description="invalid entries" />
+    </stdio>
+    <command><![CDATA[
+        pslPosTarget 
+            '${input_psl}'
+            '${output_psl}'
+]]></command>
+      <inputs>
+            <param type="data" name="input_psl" format="psl" />
+      </inputs>
+      <outputs>
+            <data format="psl" name="output_psl" label="${tool.name} on ${on_string}"></data>
+      </outputs>
+  <tests>
+      <test>
+            <param name="input_psl" value="amaVit1_Gallus/amaVit1_Gallus_gallus_filtered_valid.psl" />
+            <output name="output_psl" value="amaVit1_Gallus/amaVit1_Gallus.pos.psl" />
+      </test>
+      <test>
+            <param name="input_psl" value="dbia3/dbia3_dmel_filtered_valid.psl" />
+            <output name="output_psl" value="dbia3/dbia3_dmel.pos.psl" />
+      </test>
+
+  </tests> 
+  <help>
+        <![CDATA[
+pslPosTarget 
+=============
+
+- flip psl strands so target is positive and implicit
+
+usage:
+
+   pslPosTarget inPsl outPsl
+
+Source code (v340):
+++++++++++++++++++++
+
+userApps.v340.src.tgz: http://hgdownload.cse.ucsc.edu/admin/exe/
+
+]]></help>  
+<citations>
+      <citation type="bibtex">@article{kent2002blat,
+  title={BLAT—the BLAST-like alignment tool},
+  author={Kent, W James},
+  journal={Genome research},
+  volume={12},
+  number={4},
+  pages={656--664},
+  year={2002},
+  publisher={Cold Spring Harbor Lab}
+      }</citation>
+</citations> 
+</tool>
+             
+            
+        
+
